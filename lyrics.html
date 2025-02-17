@@ -1,0 +1,283 @@
+<!-- This is the lyrics page-->
+
+<!DOCTYPE html> <!-- This starts the document -->
+<html lang="en"> <!-- This starts the page and specifies English as the language -->
+
+<head>
+    <!-- Meta information -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donkey Kong Rap</title>
+    
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Default cursor (normal pointer) */
+        body {
+            cursor: auto;
+        }
+    
+        /* Change cursor when hovering over any element */
+        body *:hover {
+            cursor: url('images/microphone-cursor.png'), auto;
+        }
+    </style>
+        
+</head>
+
+
+<body> <!-- This is the main content section of the webpage -->
+
+    <!-- Header Section: Contains the logo and navigation menu -->
+    <header>
+        <div class="logo">
+            <!-- Logo linking back to the homepage -->
+            <a href="../" class="logo-link">THE DK RAP SONG</a>
+        </div>
+        
+        <!-- Navigation Menu: Contains links to different sections/pages -->
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="lyrics.html">Lyrics</a></li> <!-- Link to the lyrics page -->
+                <li><a href="../#dk-rap">Rap Video</a></li> <!-- Link to the DK Rap video section -->
+                <li>
+                    <a href="intro.html">Intro</a>
+                    
+                    <!-- Dropdown menu for character links -->
+                    <ul>
+                        <li><a href="dk.html">DK</a></li> <!-- Link to Donkey Kong's page -->
+                        <li><a href="tiny.html">Tiny</a></li> <!-- Link to Dixie's page -->
+                        <li><a href="lanky.html">Lanky</a></li> <!-- Link to Lanky's page -->
+                        <li><a href="diddy.html">Diddy</a></li> <!-- Link to Diddy's page -->
+                        <li><a href="chunky.html">Chunky</a></li> <!-- Link to Chunky's page -->
+                    </ul>
+                </li>
+                <li><a href="crankysfridge.html">Cranky's Fridge</a></li> <!-- Link to Cranky's Fridge section -->
+                <li><a href="funfacts.html">Fun Facts and Memes</a></li> <!-- Link to Fun Facts and Memes section -->
+            </ul>
+        </nav>
+    </header>
+
+<!-- Floating Call-To-Action Button -->
+<div class="scrolling-cta-box">
+    <img src="images/video-icon.png" alt="Video Icon" class="cta-icon">
+    <a href="../#dk-rap" class="cta-link">Video</a> 
+</div>
+
+<!-- Lyrics Section -->
+
+<!-- Header Box -->
+<!-- Hidden Checkbox for Scroll Toggle -->
+<input type="checkbox" id="scrollToggle" style="display: none;">
+
+<!-- Lyrics Section -->
+<div class="lyrics-grid-container">
+    <!-- Left Speaker Box -->
+    <div class="lyrics-grid-item-1">
+        <img src="images/left-speaker.png" alt="Left Image Placeholder">
+        <label for="scrollToggle" class="btn-label-left">Start/Stop<br> Karaoke</label>
+    </div>
+
+    <!-- Middle GIF -->
+<!-- Middle GIF and Print Button Container -->
+<div class="lyrics-grid-item-2">
+    <div class="gif-container">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm9oYTU0ZnE0cjNvYTI1emRrbGRpb2R1MHZkNHczd3Rud242N3FvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Td52Ztt5v5vQ4/giphy.gif" 
+        alt="Donkey Kong making a silly face gif">
+        
+        <!-- Print Lyrics Button -->
+        <button class="print-btn" onclick="window.open('assets/DK Rap Lyrics.pdf', '_blank')">
+            Print Lyrics
+        </button>
+        
+    </div>
+
+    <!-- Audio Player -->
+    <audio controls>
+        <source src="assets/dk-rap.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Lyrics Navigation -->
+    <div class="lyrics-nav">
+        <a href="#introduction">Intro</a>
+        <a href="#donkey-kong">Donkey Kong</a>
+        <a href="#chorus">Chorus</a>
+        <a href="#tiny-kong">Tiny Kong</a>
+        <a href="#lanky-kong">Lanky Kong</a>
+        <a href="#diddy-kong">Diddy Kong</a>
+        <a href="#chunky-kong">Chunky Kong</a>
+        <a href="#cranky">Cranky's Fridge</a>
+        <a href="#footnote">Footnote</a>
+    </div>
+    
+    </div>
+
+   <!-- Right Speaker Box (Now a Back to Top Button) -->
+<div class="lyrics-grid-item-3">
+    <img src="images/right-speaker.png" alt="Right Speaker">
+    <a href="lyrics.html" class="btn-label-right">Reset Karoke</a>
+</div>
+</div>
+<!-- All Lyrics  -->
+ 
+
+<!-- Lyrics Scroll Box -->
+<div class="lyrics-scroll-box-container">
+    <div class="lyrics-box">
+
+    <!-- Main Title -->
+    <h1 class="dk-title">✨DK Rap Lyrics🎤</h1>
+
+    <div id="introduction" class="lyrics-section">
+    <!-- Opening Line -->
+    <p class="karaoke-line">Here, here, here we go</p>
+  
+    <!-- Introduction Lyrics -->
+    <p class="karaoke-line">So they're finally here, performing for you</p>
+    <p class="karaoke-line">If you know the words, you can join in too</p>
+    <p class="karaoke-line">Put your hands together, if you want to clap</p>
+    <p class="karaoke-line">As we take you through this monkey rap!</p>
+    <p class="karaoke-line huh">Huh!</p>
+</div>
+
+    <!-- Chorus -->
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong!</h2>
+
+    <div id="donkey-kong" class="lyrics-section">
+    <!-- Donkey Kong's Verse -->
+    <p class="karaoke-line">He's the leader of the bunch, you know him well</p>
+    <p class="karaoke-line">He's finally back to kick some tail</p>
+    <p class="karaoke-line">His Coconut Gun can fire in spurts</p>
+    <p class="karaoke-line">If he shoots ya, it's gonna hurt!</p>
+    <p class="karaoke-line">He's bigger, faster, and stronger too</p>
+    <p class="karaoke-line">He's the first member of the D.K. crew!</p> 
+    <p class="karaoke-line huh">Huh!</p>
+    <br>
+</div>
+
+<div id="chorus" class="lyrics-section">
+    <!-- Chorus Repetition -->
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong!</h2>
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong is here!</h2>
+</div>
+
+<div id="tiny-kong" class="lyrics-section">
+
+    <!-- Tiny Kong's Verse -->
+    <p class="karaoke-line">(Here we go)</p>
+    <p class="karaoke-line">This Kong's got style, so listen up, dudes</p>
+    <p class="karaoke-line">She can shrink in size, to suit her mood</p>
+    <p class="karaoke-line">She's quick and nimble when she needs to be</p>
+    <p class="karaoke-line">She can float through the air and climb up trees!</p>
+    <p class="karaoke-line">If you choose her, you'll not choose wrong</p>
+    <p class="karaoke-line">With a skip and a hop, she's one cool Kong!</p>
+    <p class="karaoke-line huh">Huh!</p>
+</div>
+
+    <!-- Chorus -->
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong!</h2>
+<div id="lanky-kong" class="lyrics-section">
+    <!-- Lanky Kong's Verse -->
+    <p class="karaoke-line">He has no style, he has no grace</p>
+    <p class="karaoke-line">This Kong has a funny face</p>
+    <p class="karaoke-line">He can handstand when he needs to</p>
+    <p class="karaoke-line">And stretch his arms out, just for you</p>
+    <p class="karaoke-line">Inflate himself just like a balloon</p>
+    <p class="karaoke-line">This crazy Kong just digs this tune!</p>
+    <p class="karaoke-line huh">Huh!</p>
+    </div>
+   
+    <!-- Chorus Repetition -->
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong!</h2>
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong is here!</h2>
+  
+    <div id="diddy-kong" class="lyrics-section">
+    <!-- Diddy Kong's Verse -->
+    <p class="karaoke-line">He's back again and about time too</p>
+    <p class="karaoke-line">And this time he's in the mood</p>
+    <p class="karaoke-line">He can fly real high with his jetpack on</p>
+    <p class="karaoke-line">With his pistols out, he's one tough Kong!</p>
+    <p class="karaoke-line">He'll make you smile when he plays his tune</p>
+    <p class="karaoke-line">But Kremlings beware 'cause he's after you!</p>
+    <p class="karaoke-line huh">Huh!</p>
+</div>
+
+    <!-- Chorus -->
+    <h2 class="karaoke-line dk-highlight">DK! Donkey Kong!</h2>
+    <p class="karaoke-line huh">Huh!</p>
+
+    <div id="chunky-kong" class="lyrics-section">
+
+    <!-- Chunky Kong's Verse  -->
+    <p class="karaoke-line">Finally, he's here for you</p>
+    <p class="karaoke-line">It's the last member of the D.K. crew!</p>
+    <p class="karaoke-line">This Kong's so strong, it isn't funny</p>
+    <p class="karaoke-line">Can make a Kremling cry out for mummy</p>
+    <p class="karaoke-line">Can pick up a boulder with relative ease</p>
+    <p class="karaoke-line">Makes crushing rocks seem such a breeze</p>
+    <p class="karaoke-line">He may move slow, he can't jump high</p>
+    <p class="karaoke-line">But this Kong's one hell* of a guy!</p>
+    <p class="karaoke-line huh">Huh!</p>
+
+</div>
+
+<br>
+<div id="cranky" class="lyrics-section">
+
+<!-- Final Call to Cranky -->
+<p class="karaoke-line fridge">Come on, Cranky, take it to the fridge!</p>
+
+<!-- Food Chorus -->
+<p class="karaoke-line-2">
+    <strong><span class="walnuts">Walnuts</span>, 
+    <span class="peanuts">peanuts</span>, 
+    <span class="pineapple">pineapple smells</span>,</strong>
+</p>
+<p class="karaoke-line-2">
+    <strong><span class="grapes">Grapes</span>, 
+    <span class="melons">melons</span>, 
+    <span class="oranges">oranges</span>, 
+    and <span class="coconut-shells">coconut shells</span>!</strong>
+</p>
+<p class="karaoke-line ahh-yeah"><strong>(Ahh, yeah!)</strong></p>
+<br>
+<!-- Food Chorus Repetition -->
+<p class="karaoke-line-2">
+    <strong><span class="walnuts">Walnuts</span>, 
+    <span class="peanuts">peanuts</span>, 
+    <span class="pineapple">pineapple smells</span>,</strong>
+</p>
+<p class="karaoke-line-2">
+    <strong><span class="grapes">Grapes</span>, 
+    <span class="melons">melons</span>, 
+    <span class="oranges">oranges</span>, 
+    and <span class="coconut-shells">coconut shells</span>!</strong>
+</p>
+<p class="karaoke-line ahh-yeah"><strong>(Ahh, yeah!)</strong></p>
+
+</div>
+<div id="footnote" class="lyrics-section">
+    <!-- Footnote -->
+    <p> <small>* Replaced with "heck" in Super Smash Bros.</small></p>
+</div>
+</div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <h4>Donkey Kong Rap &copy; 2025</h4>
+    <div class="back-to-top-wrapper">
+        <img src="images/barrel-outline.png" alt="Barrel" class="back-to-top-image">
+        <a href="#" class="back-to-top">↑ Back to Top</a>
+    </div>
+</footer>
+
+</body> <!-- This ends the main content of the page -->
+
+</html> <!-- This ends the HTML document -->
+
+

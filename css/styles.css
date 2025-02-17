@@ -1,0 +1,1986 @@
+/* =============================
+   DK RAP SONG CSS DOCUMENT - UPDATED 2025
+   ============================= */
+/* =============================
+   Overall Page Structure
+   ============================= */
+  
+   @font-face {
+
+    font-family: 'Nintendo-DS-BIOS';
+
+    src: url('../assets/Nintendo-DS-BIOS.ttf') format('truetype');
+
+}
+
+/* Defines the overall page layout using CSS Grid */
+body {
+    display: grid; /* Creates a grid layout */
+    grid-template-rows: auto 1fr auto; /* Defines three rows: header, main content, and footer */
+    grid-template-columns: 1fr; /* Single column layout */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+
+}
+
+/* =============================
+   Header (Navigation Bar)
+   ============================= */
+
+/* Styles the header section */
+header {
+    display: flex; /* Uses flexbox for alignment */
+    justify-content: space-between; /* Spaces elements evenly */
+    align-items: center; /* Aligns elements vertically */
+    background: #0b5e3b; /* Sets background color */
+    color: white; /* Sets text color */
+    padding: 20px; /* Adds padding inside header */
+    height: 50px; /* Sets fixed height */
+    grid-column: 1 / -1; /* Spans across all columns */
+    z-index: 100;
+}
+
+/* =============================
+   Logo Styling
+   ============================= */
+
+/* Styles the logo link */
+.logo-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Matches text color of parent */
+    font-weight: bold; /* Makes text bold */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets font */
+    font-size: 25px; /* Sets font size */
+}
+
+/* Changes logo color on hover */
+.logo-link:hover {
+    text-decoration: none; /* Ensures no underline on hover */
+    color: #ffcc00; /* Changes color on hover */
+}
+
+/* =============================
+   Navigation Menu
+   ============================= */
+
+/* Styles the navigation list */
+nav ul {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets font */
+    font-size: 16px; /* Sets font size */
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+    z-index: 10; /* Ensures navigation stays above other elements */
+}
+
+/* Styles navigation items */
+nav ul li {
+    position: relative; /* Allows dropdown positioning */
+    display: inline-block; /* Arranges items in a row */
+    margin-right: 15px; /* Adds spacing between items */
+}
+
+/* Styles dropdown menu */
+nav ul li ul {
+    display: none; /* Hides dropdown initially */
+    position: absolute; /* Positions dropdown absolutely */
+    background: #ffdd57; /* Sets background color */
+    padding: 10px; /* Adds padding inside dropdown */
+    border-radius: 5px; /* Rounds corners */
+    list-style: none; /* Removes bullet points */
+    top: calc(100% + 10px); /* Positions dropdown below parent */
+    left: 0; /* Aligns dropdown with parent */
+}
+
+/* Shows dropdown on hover */
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Styles dropdown list items */
+nav ul li ul li {
+    display: block;
+    margin: 20px 0; /* Adds vertical spacing */
+    padding: 5px 10px; /* Adds padding */
+}
+
+/* Styles navigation links */
+nav a {
+    text-decoration: none; /* Removes underline */
+    padding: 10px; /* Adds padding inside links */
+    background: #ff5733; /* Sets background color */
+    color: white; /* Sets text color */
+    border-radius: 5px; /* Rounds corners */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+/* Changes link background color on hover */
+nav a:hover {
+    background: #d94326;
+}
+
+/* =============================
+   Footer Styling
+   ============================= */
+
+/* Styles the footer */
+footer {
+    position: relative; /* Needed to contain the button */
+    background: #0b5e3b; /* Sets background color */
+    height: 100px; /* Increased height to help with layering */
+    overflow: visible; /* Allows elements to layer on top */
+    padding: 0 0 30px 0; /* Adjust padding for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Keeps footer in the stacking context */
+}
+
+/* Styles footer heading */
+footer h4 {
+    font-size: 20px; /* Sets font size */
+    color: white; /* Sets text color */
+    text-align: center; /* Centers text */
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+/* =============================
+   Back to Top Button + Barrel Layering
+   ============================= */
+
+/* Wrapper for the button and image */
+.back-to-top-wrapper {
+    position: absolute; /* Allows it to overlap footer and section */
+    right: 120px; /* Aligns to right */
+    bottom: 20px; /* Positions it to overlap last section and footer */
+    width: 120px; /* Adjusted for barrel size */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500; /* Ensures it's above the footer and last section */
+}
+
+/* The barrel image */
+.back-to-top-image {
+    position: absolute;
+    width: 120px; /* Ensures full visibility */
+    height: 150px; /* Slightly larger for proper overlap */
+    z-index: 1; /* Keeps image behind button */
+}
+
+/* Back to Top button */
+.back-to-top {
+    position: absolute; /* Ensures it sits on top of the barrel */
+    background: #ffcc00; /* Solid yellow background */
+    color: #000; /* Sets text color */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets font */
+    text-decoration: none; /* Removes underline */
+    text-align: center; /* Centers text */
+    border-radius: 5px; /* Rounds corners */
+    padding: 5px; /* Adds padding */
+    font-size: 16px; /* Sets font size */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+    z-index: 2; /* Ensures button stays ABOVE the image */
+}
+
+/* Button hover effect */
+.back-to-top:hover {
+    background-color: #ffaa00;
+}
+
+
+
+/* =============================
+   Scrolling CTA Box Link
+   ============================= */
+
+/* Styles a fixed-position call-to-action box on the right side of the page */
+.scrolling-cta-box {
+    position: fixed; /* Sticks to the viewport */
+    right: -90px; /* Keeps it partially tucked */
+    transition: right 0.3s ease-in-out;
+    top: 30%; /* Positions vertically at 46% from the top */
+    z-index: 50; /* Ensures it appears above most elements */
+    transform: translateY(-50%); /* Centers it vertically */
+    width: 150px; /* Fixed width */
+    background-color: blue; /* Sets background color */
+    color: white; /* Sets text color */
+    display: flex; /* Uses flexbox for alignment */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    border-radius: 10px 0 0 10px; /* Rounds left corners */
+    padding: 5px;
+    z-index: 999;
+}
+
+.scrolling-cta-box:hover {
+    right: 0px; /* Fully slides out on hover */
+}
+
+.cta-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px 0 0 5px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-decoration: none; /* Removes underline */
+    padding: 15px 5px 15px 15px;
+    border-radius: 10px 0 0 10px;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.cta-icon {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-left: -10px;
+}
+
+/* Adjusts padding on hover */
+.scrolling-cta-box a:hover {
+    padding: 15px 5px 15px 15px;
+}
+
+/* =============================
+   Page Structure Ends
+   ============================= */
+
+
+/* =============================
+   HOMEPAGE - STARTS
+   ============================= */
+/* =============================
+   Homepage - Hero - Character Header
+   ============================= */
+
+/* Wrapper for the character image */
+.homepage-header-box {
+    width: 100%; /* Full width */
+    position: relative;
+    display: inline-block; /* Ensures it wraps around the image */
+}
+
+/* Styles the character image */
+.character-image {
+    width: 100%; /* Makes the image responsive */
+    height: 230px; /* Fixed height */
+    object-fit: cover; /* Ensures image fills without distortion */
+    object-position: top;
+    display: block; /* Removes extra space below the image */
+}
+
+/* =============================
+   Homepage - Hero - Floating Button 
+   ============================= */
+
+   /* Styles the floating button */
+.floating-button {
+    position: absolute;
+    bottom: -21%; /* Positions the button below the image */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    background: #ffcc00;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+}
+
+/* Hover effect for floating button */
+.floating-button:hover {
+    background: #ffaa00;
+}
+
+/* =============================
+   Hero Box Section - "Legendary Anthem of the Kong Crew!"
+   ============================= */
+
+/* Styles the hero section */
+.hero-box {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: auto;
+    text-align: center;
+    background-color: #d9f0d7; /* Light green background */
+    padding: 50px 150px;
+}
+
+/* Styles the main heading in hero section */
+.hero-box h1 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Styles the paragraph in hero section */
+.hero-box p {
+    padding: 0 250px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+/* Styles the unordered list in hero section */
+.hero-box ul {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none; /* Removes bullet points */
+    padding: 0 100px 30px;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+}
+
+/* Styles the links inside the list */
+.hero-box ul li a {
+    text-decoration: none;
+    color: #3CB371; /* Green color */
+}
+
+/* Hover effect for list links */
+.hero-box ul li a:hover {
+    color: #ffaa00; /* Changes color to yellow on hover */
+}
+
+
+/* =============================
+   Origin Story Boxes
+   ============================= */
+
+/* =============================
+   Origin Story - Section 1 - 2 Column Box
+   ============================= */
+
+   .origin-story-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    align-items: center; /* Align content vertically */
+    justify-content: center; /* Centers the grid */
+    text-align: left; /* Align text to left */
+    background-color: #272d0b;
+    padding: 50px 100px;
+    gap: 40px; /* Adds space between columns */
+    color: white;
+}
+
+.origin-story-box h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    grid-column: span 2; /* Makes the title span across both columns */
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.origin-story-box p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding: 0 10px;
+    max-width: 600px; /* Controls text width for readability */
+    line-height: 1.5; 
+}
+
+.score-image {
+    width: 100%; /* Makes the image responsive */
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+/* =============================
+   Origin Story - Section 2 - 3 Mini Boxes
+   ============================= */
+
+.origin-story-box-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    background-color: #272d0b;
+    padding: 10px 50px 10px 50px;
+}
+
+.origin-story-box-2 h1, 
+.origin-story-box-2 h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.origin-story-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.origin-item {
+    background: #b4b9f8;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.origin-item:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.origin-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #040403;
+}
+
+.origin-item p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #040403;
+}
+
+
+/* =============================
+    Origin Story - Section 3 - Full Width Box - Legacy Box
+   ============================= */
+
+.legacy-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    background-color: #272d0b;
+    color: white;
+    padding: 50px 100px;
+}
+
+.legacy-box h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.legacy-box p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    max-width: 700px;
+    line-height: 1.5; 
+}
+
+
+/* =============================
+   Video Box - 3-Grid Container
+   ============================= */
+
+   .three-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Defines three columns */
+    grid-template-rows: auto 1fr auto auto; /* Defines row structure */
+    gap: 0;
+    width: 100%;
+}
+
+/* =============================
+   Sidebars
+   ============================= */
+
+/* Styles both sidebars with a background image */
+.three-grid-sidebar {
+    background-image: url("../images/dk-foliage.jpg"); /* Adds background image */
+    background-size: cover; /* Ensures image fully covers sidebar */
+    background-position: center; /* Centers the image */
+    padding: 20px; /* Adds padding inside sidebar */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100%; /* Ensures full height */
+
+}
+
+/* Left Sidebar Styling */
+.three-grid-left-sidebar {
+    height: auto; /* Adapts height to content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Right Sidebar Specific */
+.three-grid-right-sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adapts height to content */
+}
+
+/* Buttons in Sidebars */
+.sidebar-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.sidebar-btn:hover {
+    background: #ffaa00;
+    transform: scale(1.05);
+}
+
+/* =============================
+   Video Box - Main Content Area (Youtube Video Embedded) 
+   ============================= */
+
+.three-grid-main-content {
+    background: #b4b9f8; /* Sets background color */
+    padding: 50px; /* Adds padding around content */
+    height: auto; /* Adjusts height to content */
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    justify-content: center; /* Centers vertically (if a height is set) */
+    align-items: center; /* Centers horizontally */
+    text-align: center; /* Centers text inside elements */
+}
+
+/* =============================
+   Character Reference Cards
+   ============================= */
+
+   .character-reference-box {
+    display: flex;
+    flex-direction: column; /* Stack elements in a single column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: auto; 
+    text-align: center; /* Ensures text is centered */
+   background: #0b5e3b; /* Sets background color */
+    padding: 50px 20px 100px 20px;
+}
+
+/* =============================
+  Character Reference Cards - Container
+   ============================= */
+
+.character-reference-grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Creates five equal columns */
+    gap: 20px; /* Adds space between items */
+    padding: 40px 20px 20px; /* Extra padding on top to prevent clipping */
+}
+
+/* =============================
+ Character Reference Cards - Cutout Images
+   ============================= */
+
+.cutout-image {
+    position: absolute;
+    top: -50px; /* Moves the image slightly higher */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Adjust based on desired size */
+    z-index: 10; /* Ensures it stays above other elements */
+    transition: filter 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+/* Grayscale Effect on Hover */
+.cutout-image:hover {
+    filter: grayscale(100%);
+}
+
+/* =============================
+    Character Reference Cards - Card Styling
+   ============================= */
+
+   .card {
+    position: relative; /* Allows button to be positioned relative to card */
+    background: #f4f4f4;
+    padding: 40px 15px 10px; /* Adjusted bottom padding for button space */
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 8;
+    height: 100%; /* Ensures all cards have equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is evenly spaced */
+}
+
+
+/* =============================
+ Character Reference Cards - Title Styling
+============================= */
+
+.card h2 {
+    font-size: 22px; /* Adjust size as needed */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px 0px 2px 0; /* Controls space above and below the title */
+}
+
+/* =============================
+ Character Reference Cards - Paragraph Styling
+============================= */
+
+.card p {
+    font-size: 16px; /* Adjust readability */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px 0px 0px 0;  /* Adds space below paragraph before button */
+}
+/* =============================
+     Character Reference Cards - Card Button Styling
+   ============================= */
+
+.card button {
+    margin-top: auto; /* Pushes button to the bottom */
+    margin-bottom: 10px; /* Keeps 10px padding from bottom */
+    background: #ffcc00;
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.card button:hover {
+    background: #ffaa00;
+}
+
+
+/* Character names (h2) as clickable links */
+.character-name {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Default color */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect - Turn green */
+.character-name:hover {
+    color: green;
+}
+
+/* =============================
+   Reference Article Box
+   ============================= */
+
+   .reference-article-box {
+    display: flex;
+    flex-direction: column; /* Stack elements in a single column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: auto; 
+    text-align: center; /* Ensures text is centered */
+    background-color: #d9f0d7; /* Light green background */
+    padding: 50px;
+}
+
+/* =============================
+  Reference Article Box - Title Styling
+   ============================= */
+
+.reference-article-box h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* =============================
+    Reference Article Box - Grid Layout
+   ============================= */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* =============================
+     Reference Article Box - Individual Article Box
+   ============================= */
+
+.article-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.article-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* =============================
+     Reference Article Box - Article Title Styling
+   ============================= */
+
+.article-item h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* =============================
+    Reference Article Box - Paragraph Styling
+   ============================= */
+
+.article-item p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* =============================
+  Reference Article Box - Article Links
+   ============================= */
+
+.article-item h2 a {
+    text-decoration: none; /* Removes underline */
+    color: #58a84f; /* Green link color */
+    transition: color 0.3s ease-in-out;
+}
+
+.article-item h2 a:hover {
+    color: #ffcc00; /* Changes to yellow on hover */
+}
+
+/* =============================
+   HOMEPAGE - ENDS
+   ============================= */
+
+
+/* =============================
+   LYRICS PAGE - STARTS
+   ============================= */
+
+
+   /* =============================
+   LYRICS PAGE - Header Box (Speaker Images)
+   ============================= */
+
+.lyrics-scroll-box-container {
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #1e251e;
+}
+
+/* Define scrolling animation */
+@keyframes scrollLyrics {
+    from { transform: translateY(0); }
+    to { transform: translateY(-38%); } /* Adjust as needed */
+}
+
+/* Checkbox toggles animation state */
+#scrollToggle:checked ~ .lyrics-scroll-box-container .lyrics-box {
+    animation-play-state: running;
+}
+
+/* Hide the checkbox */
+#scrollToggle {
+    display: none;
+}
+
+
+/* Start/Stop Karaoke Button */
+.btn-label-left {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    margin-right: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.btn-label-left:hover {
+    background: #ffaa00;
+}
+
+/* Style the buttons */
+ .btn-label-right {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    text-decoration: none;
+    margin-left: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+  
+}
+
+.btn-label-left:hover, .btn-label-right:hover {
+    background: #ffaa00;
+}
+
+/* =============================
+  LYRICS PAGE - Header Box (Speaker Images) - Grid
+   ============================= */
+
+   .lyrics-grid-container {
+    width: 100%; /* Full width */
+    display: flex; /* Uses flexbox */
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers content horizontally */
+    gap: 10px; /* Adds spacing between columns */
+    background-color: #1e251e; 
+    position: relative;
+    
+}
+
+/* Left Speaker Position */
+.lyrics-grid-item-1 {
+    left: 150px; 
+}
+
+/* Right Speaker Position */
+.lyrics-grid-item-3 {
+    right: 150px; 
+}
+
+
+.lyrics-grid-item-2 {
+    display: flex;
+    flex-direction: column; /* Stack image and nav vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text inside is centered */
+    gap: 15px; /* Space between image and nav */
+    padding: 20px;
+}
+
+/* Make the GIF a small circle with a border */
+.lyrics-grid-item-2 img {
+    width: 120px; /* Adjust size */
+    height: 120px; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the circle */
+    border-radius: 50%; /* Make it a perfect circle */
+    border: 3px solid black; /* Add a border */
+}
+
+.lyrics-grid-item-1, .lyrics-grid-item-3 {
+    position: fixed;
+    width: 200px; /* Ensure it has a fixed width */
+    height: 250px; /* Define height for proper alignment */
+    display: flex;
+    flex-direction: column; /* Stack image and button vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    gap: 10px; /* Space between image and button */
+    z-index: 50;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+
+/* Ensure Images Scale Properly */
+.lyrics-grid-item-1 img, 
+.lyrics-grid-item-3 img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+}
+/* Images Inside Grid Items */
+.lyrics-grid-item-1 img {
+  padding-right: 80px;
+}
+
+/* Images Inside Grid Items */
+.lyrics-grid-item-3 img {
+    padding-left: 80px;
+  }
+
+  /* =============================
+    Print Button
+   ============================= */
+
+/* Print Lyrics Button */
+.print-btn {
+    color: black;
+    background: #ffcc00;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    transform: translateX(130px) translateY(10px); /* Moves button right & down */
+}
+
+
+.print-btn:hover {
+    background: #ffaa00;
+}
+
+
+/* =============================
+    LYRICS PAGE - Audio Box for MP3
+   ============================= */
+
+/* Style the audio player */
+audio {
+    width: 300px; /* Adjust width as needed */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px;
+    border-radius: 0; /* Square shape */
+    display: block;
+}
+
+/* Style the audio controls panel */
+audio::-webkit-media-controls-panel {
+    background: #ff5733 !important;
+    color: white !important;
+
+
+}
+
+/* Make buttons (play, pause, volume) white */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider-container {
+    color: white !important;
+}
+
+/* Make progress bar (song position box) transparent */
+audio::-webkit-media-controls-timeline {
+    background: transparent !important;
+}
+
+/* Make progress bar handle and text white */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: white !important;
+}
+
+   /* =============================
+    LYRICS PAGE - Secondary Nav Bar for Lyrics
+   ============================= */
+
+   /* Center and style the navigation */
+.lyrics-nav {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items if screen is small */
+    justify-content: center; /* Center horizontally */
+    gap: 10px; /* Space between links */
+    padding: 10px;
+    width: 50%; /* Ensures nav spans the full width */
+}
+
+.lyrics-nav a {
+    color: white;
+    background: #444;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lyrics-nav a:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+  
+/* =============================
+   Lyrics Box (All Lyrics) 
+   ============================= */
+
+   .lyrics-box {
+    display: flex;
+    flex-direction: column; /* Stack elements in a single column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: auto;
+    width: 100%; /* Makes the container full width */
+    text-align: center; /* Ensures text is centered */
+    background-color: #1e251e; 
+    color: black;
+    padding: 0px 300px 80px 300px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    cursor: default;
+    animation: scrollLyrics 90s linear infinite;
+    animation-play-state: paused; /* Default: paused */
+}
+
+
+/* =============================
+    Lyrics Box (All Lyrics) - Title
+   ============================= */
+
+   .dk-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+padding-top: 0px;
+padding-bottom: 5px;
+color: white;
+}
+
+/* Hover effect - Enlarges and turns green */
+.dk-title:hover {
+    font-size: 1.8em;
+    color: green;
+}
+
+/* =============================
+    Lyrics Box (All Lyrics) - Paragraph Styling
+   ============================= */
+
+   .lyrics-box p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: white;
+    
+}
+
+.lyrics-section {
+
+    scroll-margin-top: 100px;
+}
+
+/* =============================
+   Lyrics Box (All Lyrics) - Karaoke Line Hover Styling 
+   ============================= */
+   
+   .karaoke-line {
+    display: block;
+    padding: 5px 0;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    line-height: 1.0;
+    font-size: 18px;
+    color: white; /* Default white text */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Hover effect on entire line */
+.karaoke-line:hover {
+    background: yellow;
+    color: black;
+    border-radius: 5px;
+    font-size: 23px; /* Increases size when hovered */
+    padding: 10px 5px;
+}
+
+.karaoke-line-2 {
+    display: block;
+    padding: 5px 0;
+    line-height: 1.0;
+    font-size: 18px;
+    color: black;
+}
+
+/* Hover effect on entire line */
+.karaoke-line-2:hover {
+    background: yellow;
+    color: black;
+    border-radius: 5px;
+    font-size: 23px; /* Increases size when hovered */
+    padding: 10px 5px;
+}
+
+/* Hover effects - Change to respective colors */
+.walnuts:hover {
+    color: brown;
+    font-size: 30px;
+}
+
+.peanuts:hover {
+    color: rgb(162, 115, 53);
+    font-size: 30px;
+}
+
+.pineapple:hover {
+    color: rgb(106, 106, 5);
+    font-size: 30px;
+}
+
+.grapes:hover {
+    color: purple;
+    font-size: 30px;
+}
+
+.melons:hover {
+    color: green;
+    font-size: 30px;
+}
+
+.oranges:hover {
+    color: orange;
+    font-size: 30px;
+}
+
+.coconut-shells:hover {
+    color: red;
+    font-size: 30px;
+}
+
+
+/* =============================
+     Lyrics Box (All Lyrics) - "DK" Title Styling
+   ============================= */
+
+   .dk-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px; /* Default font size */
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: white;
+}
+
+/* Hover effect: Increase font size by 5px */
+.dk-title:hover {
+    font-size: 32px; /* 24px + 5px */
+    color: green;
+}
+
+/* =============================
+   Lyrics Box (All Lyrics) - "DK! Donkey Kong!" 
+   ============================= */
+
+   .dk-highlight {
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: 28px; /* Default font size */
+    color: white;
+}
+
+.dk-highlight:hover { 
+    font-size: 32px; /* 18px + 5px */
+    color: rgb(240, 152, 11);
+    padding: 10px;
+} 
+/* =============================
+    Lyrics Box (All Lyrics) - "Huh!" 
+   ============================= */
+
+.huh {
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: 28px; /* Default font size */
+    color: white;
+}
+
+/* Hover effect: Increase font size by 5px */
+.huh:hover {
+    font-size: 32px; /* 18px + 5px */
+    color: rgb(240, 152, 11);
+    padding: 10px;
+}
+
+
+/* =============================
+  Lyrics Box (All Lyrics) - "Come on, Cranky, take it to the fridge!" 
+   ============================= */
+  
+   .fridge {
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: 18px; /* Default font size */
+}
+
+.fridge:hover {
+    font-size: 23px; /* Increases size by 5px */
+    color: rgb(240, 152, 11);
+}
+
+/* =============================
+  Lyrics Box (All Lyrics) - "(Ahh, yeah!)" 
+   ============================= */
+
+   .ahh-yeah {
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: 18px; /* Default font size */
+}
+
+.ahh-yeah:hover {
+    font-size: 23px; /* Increases size by 5px */
+    color: rgb(240, 152, 11);
+}
+
+/* =============================
+   LYRICS PAGE ENDS
+   ============================= */
+
+
+/* =============================
+    CHARACTER PAGES GRID TEMPLATE 
+    - INTRO -through- CRANKY'S FRIDGE - STARTS
+   ============================= */
+    /* =============================
+   CHARACTER PAGES - Foliage Img Header and Footer Boxes
+   ============================= */
+
+   .character-header-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-image: url("../images/dk-foliage.jpg");
+    transition: background 0.3s ease-in-out;
+}
+
+.character-header-box-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-image: url("../images/dk-foliage.jpg");
+    transition: background 0.3s ease-in-out;
+}
+
+ /* =============================
+   CHARACTER PAGES - Grids and Containers
+   ============================= */
+
+   /* Outer Container */
+.character-container-outerbox{
+    width: 100%;
+    height: 405px;
+    display: flex;
+    overflow: hidden; /* Ensures no horizontal scrolling */
+}
+
+/* Main Layout */
+.character-inner-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+/* Left Column - Fixed Inside the Container */
+.character-left-box{
+    width: 25%;
+    background-color: rgb(21, 143, 88);
+    padding: 5px 30px 5px 30px;
+    height: auto;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+/* Right Column - Scrollable */
+.character-right-box {
+    width: 75%;
+    height: auto;
+    overflow-y: auto;
+    margin: 0;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+}
+
+/* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+.character-right-box::-webkit-scrollbar {
+    display: none;
+}
+
+/* Content */
+.character-content-box {
+    height: auto;
+    background-color: lightblue;
+    padding: 0px;
+    width: 100%; /* Ensures full width */
+}
+
+/* =============================
+  CHARACTER PAGES - Left Side Bar
+   ============================= */
+
+/* Character Left BOXES */
+
+/* Character Left BOXES - Centers everything */
+.dk-fun-facts-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+/* Image Styling */
+.character-page-image {
+    width: 80px;
+    height: 80px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.character-page-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.character-page-image:hover {
+    animation: rotate-shake 0.5s infinite ease-in-out;;
+}
+
+.crankys-icon-img {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+
+@keyframes rotate-shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); } /* Rotate left */
+    50% { transform: rotate(5deg); }  /* Rotate right */
+    75% { transform: rotate(-5deg); } /* Rotate left again */
+}
+
+/* Title Styling */
+.dk-fun-facts-box h1 {
+    font-family: 'Nintendo-DS-BIOS', sans-serif;
+    font-size: 35px;
+    margin: 5px 0;
+
+}
+
+.dk-fun-facts-box p {
+    font-family: 'Nintendo-DS-BIOS', sans-serif;
+    font-size: 24px;
+    margin: 0px 0 30px 0;
+
+}
+
+
+/* Styles the Lyrics button */
+.character-lyrics-anchor-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffcc00;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 0 20px 0;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.character-lyrics-anchor-button:hover {
+    background: #ffaa00;
+}
+
+/* Styles the container for Back and Next buttons */
+.navigation-buttons {
+    display: flex; /* Makes buttons align horizontally */
+    justify-content: center; /* Centers buttons */
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 10px; /* Space from Lyrics button */
+}
+
+/* Styles Back and Next buttons */
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2f7c25; /* Green color */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.nav-button:hover {
+    background: #256b1a; /* Darker green on hover */
+}
+
+
+ /* =============================
+   CHARACTER PAGES - Lyric Highlight Boxes 
+   ============================= */
+/* =============================
+   CHARACTER PAGES - Lyric Highlight Box - Full Width Box 
+   ============================= */
+
+   .full-width-character-lyric-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #272d0b; 
+    padding: 50px 100px;
+    transition: background 0.3s ease-in-out;
+}
+
+.full-width-character-lyric-box h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+
+/* =============================
+    CHARACTER PAGES - Lyric Highlight Box - Two Columns Layout
+   ============================= */
+
+.two-box-character-lyric-box {
+    width: 100%;
+    height: 200px;
+    display: flex;
+  
+}
+
+.two-box-character-lyric-box h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    
+}
+
+/* Left Column */
+.two-box-character-lyric-box-left {
+    width: 50%;
+    background-color: #272d0b;
+    transition: background 0.3s ease-in-out;
+    padding-top: 60px;
+
+}
+
+/* Right Column */
+.two-box-character-lyric-box-right {
+    width: 50%;
+    background-color: #272d0b;
+    transition: background 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+/* =============================
+  CHARACTER PAGES - Lyric Highlight Box - 3 Box Layout
+   ============================= */
+
+   .three-box-character-lyric-box {
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+
+.three-box-character-lyric-box  h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+/* Box Styles - 3 Equal Boxes */
+.three-box-character-lyric-box div {
+    width: 33.33%;
+    background-color: #272d0b;
+    transition: background 0.3s ease-in-out;
+    padding-top: 60px;
+}
+/* =============================
+    CHARACTER PAGES GRID TEMPLATE 
+    - INTRO -through- CRANKY'S FRIDGE - ENDS
+   ============================= */
+
+
+/* =============================
+    CHARACTER PAGES GRID TEMPLATE - COLORS
+    - INTRO -through- CRANKY'S FRIDGE - STARTS
+   ============================= */
+   /* =============================
+   Lyric Highlight Box - Intro 
+   ============================= */
+
+/* BOX 1 */
+.intro-box1:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+/* BOX 2 */
+.intro-box2:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 3 */
+.intro-box3-left:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+.intro-box3-right:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+/* BOX 4 */
+.intro-box4:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 5 */
+.intro-box5:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+
+/* =============================
+   Lyric Highlight Box - DK 
+   ============================= */
+
+/* BOX 1 */
+.dk-box1:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+/* BOX 2 */
+.dk-box2:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+/* BOX 3 */
+.dk-box3-left:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+.dk-box3-right:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 4 */
+.dk-box4-box1:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+.dk-box4-box2:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+.dk-box4-box3:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 5 */
+.dk-box5:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+/* BOX 6 */
+.dk-box6:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+
+/* =============================
+   Lyric Highlight Box - Tiny 
+   ============================= */
+
+/* BOX 1 */
+.tiny-box1:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+/* BOX 2 */
+.tiny-box2:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+/* BOX 3 */
+.tiny-box3-left:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+.tiny-box3-right:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+/* BOX 4 */
+.tiny-box4:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+.tiny-box5-box1:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+.tiny-box5-box2:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+.tiny-box5-box3:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+/* BOX 6 */
+.tiny-box6:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+
+/* =============================
+   Lyric Highlight Box - Lanky 
+   ============================= */
+
+/* BOX 1 */
+.lanky-box1-left:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+.lanky-box1-right:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 2 */
+.lanky-box2:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+/* BOX 3 */
+.lanky-box3:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+/* BOX 4 */
+.lanky-box4-left:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+.lanky-box4-right:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+/* BOX 5 */
+.lanky-box5:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+/* BOX 6 */
+.lanky-box6-box1:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+.lanky-box6-box2:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+.lanky-box6-box3:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 7 */
+.lanky-box7:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+
+/* =============================
+   Lyric Highlight Box - Diddy
+   ============================= */
+
+/* BOX 1 */
+.diddy-box1-left:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+.diddy-box1-right:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 2 */
+.diddy-box2:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+/* BOX 3 */
+.diddy-box3-left:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+.diddy-box3-right:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 4 */
+.diddy-box4:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+/* BOX 5 */
+.diddy-box5-left:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+.diddy-box5-right:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+/* BOX 6 */
+.diddy-box6:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 7 */
+.diddy-box7:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+
+/* =============================
+   Lyric Highlight Box - Chunky
+   ============================= */
+
+/* BOX 1 */
+.chunky-box1:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 2 */
+.chunky-box2:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+/* BOX 3 */
+.chunky-box3-left:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+.chunky-box3-right:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 4 */
+.chunky-box4-left:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+.chunky-box4-right:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+/* BOX 5 */
+.chunky-box5-box1:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+.chunky-box5-box2:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+.chunky-box5-box3:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 6 */
+.chunky-box6:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+/* BOX 7 */
+.chunky-box7-left:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+.chunky-box7-right:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 8 */
+.chunky-box8:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+/* BOX 9 */
+.chunky-box9:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+
+
+/* =============================
+   Lyric Highlight Box - Cranky's Fridge
+   ============================= */
+
+/* BOX 1 */
+.cranky-box1:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 2 */
+.cranky-box2-box1:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+.cranky-box2-box2:hover {
+    background-color: #E74C3C; /* Lava Red */
+}
+.cranky-box2-box3:hover {
+    background-color: #00AEEF; /* Blueprint Cyan */
+}
+/* BOX 3 */
+.cranky-box3:hover {
+    background-color: #9B59B6; /* Grape Purple */
+}
+/* BOX 4 */
+.cranky-box4-box1:hover {
+    background-color: #E1A95F; /* Peanut Gold */
+}
+.cranky-box4-box2:hover {
+    background-color: #BADA55; /* Kremling Lime */
+}
+.cranky-box4-box3:hover {
+    background-color: #FFD700; /* Banana Yellow */
+}
+/* BOX 5 */
+.cranky-box5:hover {
+    background-color: #2ECC71; /* Jungle Green */
+}
+/* BOX 6 */
+.cranky-box6:hover {
+    background-color: #FF8C00; /* DK Orange */
+}
+
+/* =============================
+    CHARACTER PAGES GRID TEMPLATE - COLORS
+    - INTRO -through- CRANKY'S FRIDGE - ENDS
+   ============================= */
+
+
+/* =============================
+   FUN FACTS AND MEMES PAGE - STARTS
+   ============================= */
+/* =============================
+   Fun Facts and Memes - Container 
+   ============================= */
+   .memes-box {
+    display: flex;
+    flex-direction: column; /* Stack elements in a single column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: auto;
+    text-align: center; /* Ensures text is centered */
+    background-image: url("../images/wood-bkgd.png");
+    background-size: cover; /* Ensures the image fully covers the container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    padding: 50px 100px 80px 100px;
+}
+
+/* =============================
+   Fun Facts and Memes - Title
+   ============================= */
+
+.memes-box h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px; /* Add spacing */
+    color: white;
+}
+
+ /* =============================
+   Fun Facts and Memes Page - Media Box Card
+   ============================= */
+
+   .media-box-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    max-width: 650px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.media-box-image {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.media-box-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.media-box-text {
+    text-align: left;
+    padding: 0 20px;
+}
+
+.media-box-text h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.media-box-text p {
+    text-align: left;
+}
+
+.media-box-text img {
+    width: 350px; /* Set explicit width */
+    height: 200px; /* Set explicit height */
+    float: left; /* Enables text wrapping */
+    margin: 0 15px 10px 0; /* Adds spacing between text and image */
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+.media-box-text p::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* =============================
+   FUN FACTS AND MEMES PAGE - ENDS
+   ============================= */
+
+
+   /* =============================
+   UNDER CONSTRUCTUCTION - STARTS
+   ============================= */
+/* =============================
+   Under Construction Box
+   ============================= */
+
+   .construction-box {
+    display: flex;
+    flex-direction: column; /* Stack elements in a single column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: auto;
+    text-align: center; /* Ensures text is centered */
+    background-color: #F5DEB3; /* Light brown background */
+    color: black;
+    padding: 50px 100px;
+}
+
+/* =============================
+Under Construction Box Title
+   ============================= */
+
+.construction-box h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px; /* Add spacing */
+}
+
+/* =============================
+   Under Construction Box Paragraph 
+   ============================= */
+
+.construction-box p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    max-width: 700px; /* Controls text width for readability */
+}
+
+/* =============================
+   Construction Box Image Styling
+   ============================= */
+
+.construction-box img {
+    width: 200px;
+    height: 200px;
+}
+
+ /* =============================
+   UNDER CONSTRUCTUCTION - ENDS
+   ============================= */
+  
